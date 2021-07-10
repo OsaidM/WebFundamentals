@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    $(document).ready(function(){
+    
+    $("img").hover(function(){
+      $(this).attr('src', $(this).attr('alt'));
+      }, function(){
+          $(this).attr('src', $(this).attr('alt2'));
+        })
+    })
+  </script>
+  <title>Document</title>
+</head>
+<body>
+  <img src="img/01.jpg" alt="img/5.jpg" alt2="img/01.jpg">
+  <img src="img/02.jpg" alt="img/6.jpg" alt2="img/01.jpg">
+  <img src="img/03.jpg" alt="img/7.jpg" alt2="img/01.jpg">
+  <img src="img/04.jpg" alt="img/8.jpg" alt2="img/01.jpg">
+  
+</body>
+</html>

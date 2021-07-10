@@ -1,0 +1,71 @@
+#10
+
+SELECT c.client_id, CONCAT(c.first_name, ' ', c.last_name) AS client_name, COUNT(s.site_id) AS num_sites, CONCAT(' ', s.domain_name)
+FROM clients c
+JOIN sites s ON s.client_id = c.client_id
+GROUP BY c.client_id
+ORDER BY c.client_id;
+============================================================
+#8
+
+ELECT c.client_id, CONCAT(c.first_name, ' ', c.last_name) AS client_name, COUNT(l.leads_id) AS num_leads_genereated, s.domain_name
+FROM clients c
+JOIN sites s ON s.client_id = c.client_id
+JOIN leads l ON s.site_id = l.site_id
+WHERE l.registered_datetime BETWEEN "2011-01-01%" AND "2011-12-31%"
+GROUP BY s.domain_name
+ORDER BY c.client_id;
+============================================================
+#7
+
+SELECT CONCAT(c.first_name, ' ', c.last_name) AS NAMEs, COUNT(l.leads_id) AS NUM, DATE_FORMAT(l.registered_datetime, "%M") AS MONTH
+FROM clients c
+JOIN sites s ON s.client_id = c.client_id
+JOIN leads l ON s.site_id = l.site_id
+WHERE l.registered_datetime BETWEEN "2011-01-01%" AND "2011-06-30%"
+GROUP BY month, c.first_name
+ORDER BY DATE_FORMAT(l.registered_datetime, "%m");
+
+============================================================
+#6
+
+SELECT CONCAT(c.first_name ,' ' ,c.last_name) AS NAMEs, COUNT(l.leads_id) AS total FROM clients c
+JOIN sites s ON s.client_id = c.client_id
+JOIN leads l ON s.site_id = l.site_id
+WHERE l.registered_datetime BETWEEN '2011-01-01' AND '2011-12-31'
+GROUP BY c.first_name
+
+===============================================================
+#5
+
+SELECT s.domain_name, COUNT(l.leads_id) AS total FROM (leads l)
+INNER JOIN sites s ON s.site_id = l.leads_id
+WHERE l.registered_datetime BETWEEN '2011-01-01' AND '2011-02-15'
+GROUP BY s.domain_name
+
+============================================================
+#4
+
+SELECT s.client_id AS total, COUNT(s.domain_name),MONTH(s.created_datetime) AS MONTHs, YEAR(s.created_datetime) AS YEARs FROM (sites s)
+INNER JOIN clients c ON c.client_id = s.client_id
+WHERE s.client_id = 1 GROUP BY MONTHs, YEARs
+
+============================================================
+#3
+
+SELECT s.domain_name AS Sites, c.client_id AS ID FROM (sites s)
+INNER JOIN clients c ON c.client_id = s.client_id
+WHERE c.client_id = 10;
+=========================================================
+#2
+
+SELECT SUM(amount) AS revenue, c.first_name AS fname FROM (billing b)
+INNER JOIN clients c ON c.client_id = b.client_id
+WHERE c.client_id = 2;  
+
+===========================================================
+#1
+
+SELECT SUM(amount) AS revenue, c.joined_datetime AS march FROM (billing b)
+INNER JOIN clients c ON c.client_id = b.client_id
+WHERE YEAR(b.charged_datetime) = 2012 AND MONTH(b.charged_datetime) = 3;  

@@ -1,0 +1,52 @@
+ 1.
+ SELECT customer.first_name AS FirstN,
+customer.last_name AS LastN,
+customer.email AS Email,
+address.address AS Address FROM (customer, address)
+WHERE customer.address_id = address.address_id and address.city_id = 312;
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2.
+SELECT film.title AS title,
+film.description AS description,
+film.release_year AS release_year,
+film.rating AS rating,
+film.special_features AS special_features,
+category.name AS genre
+FROM (film, category)
+WHERE category.name = 'Comedy';
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+3.
+SELECT actor.actor_id AS ID,
+actor.first_name AS FName,
+film.title AS FilmTitle,
+film.description AS Decription,
+film.release_year AS Release_year
+FROM (film, actor, film_actor)
+WHERE film.film_id = film_actor.film_id AND actor.actor_id = film_actor.actor_id
+AND actor.actor_id = 5
+GROUP BY film.title;
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4.
+SELECT customer.first_name, customer.last_name, customer.email, address.address FROM (address, customer)
+WHERE address.address_id = customer.address_id AND customer.store_id = 1 AND  address.city_id IN(1, 42 ,312 ,459) ;
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+5.
+SELECT film.title , film.description , film.release_year , film.rating , film.special_features FROM (film, film_actor) 
+WHERE rating="G" AND special_features LIKE "%behind the scenes%" AND film.film_id = film_actor.film_id AND film_actor.actor_id = 15;
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+6.
+SELECT film.film_id AS Fid, film.title AS Ft, actor.actor_id AS Aid, actor.first_name AS AFN FROM (film, actor, film_actor)
+WHERE film.film_id = film_actor.film_id AND actor.actor_id = film_actor.actor_id AND film.film_id = 369;
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7.
+SELECT film.title , film.description , film.release_year , film.rating , film.special_features , category.name AS Genre FROM (film , category ,film_category)
+WHERE category.name ="Drama" AND film_category.film_id = film.film_id AND  category.category_id = film_category.category_id AND film.rental_rate = 2.99;
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+8.
+SELECT film.title , film.description , film.release_year , film.rating , film.special_features , category.name AS Genre , CONCAT(actor.first_name, ' ' ,actor.last_name) AS Names FROM (film , category ,film_category, actor , film_actor)
+WHERE category.name = "Action" AND 
+film_category.film_id=film.film_id AND 
+category.category_id = film_category.category_id AND 
+film.film_id = film_actor.film_id AND
+actor.actor_id = film_actor.actor_id AND
+actor.first_name = 'SANDRA' AND actor.last_name = 'KILMER';

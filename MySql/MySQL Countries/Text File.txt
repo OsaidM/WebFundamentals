@@ -1,0 +1,39 @@
+1.
+SELECT name,language,percentage FROM countries 
+INNER JOIN languages ON countries.id = languages.country_id and languages.language='Slovene'
+ORDER BY percentage DESC; 
+++++++++++++++++++++++++++++++++++++++++++++++++
+2.
+
+SELECT countries.name AS Name, COUNT(cities.id) AS cities FROM (countries, cities)
+WHERE countries.id = cities.country_id GROUP BY name
+ORDER BY cities DESC;
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+3.
+SELECT countries.id as ID, cities.name as cityName, cities.population as Population FROM (cities,countries)
+WHERE cities.population > 500000 and countries.name = 'Mexico' and countries.id = cities.country_id
+GROUP BY population ORDER BY population DESC;
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4.
+SELECT countries.name AS countryName, languages.language AS language, languages.percentage AS percentage FROM (languages, countries)
+WHERE countries.id = languages.country_id AND languages.percentage > 89
+ORDER BY languages.percentage DESC;
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+5.
+
+SELECT countries.name AS CountryName, countries.surface_area AS surfArea FROM (countries)
+WHERE countries.surface_area < 501 and countries.population > 200;
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+6.
+SELECT countries.name AS CountryName, countries.government_form AS government_form, countries.life_expectancy AS life_expectancy FROM (countries)
+WHERE countries.government_form = 'Constitutional Monarchy' AND countries.capital > 200 AND countries.life_expectancy > 75;
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7.
+SELECT countries.name AS CountryName, cities.name AS citiesName, cities.district AS district, cities.population  FROM (countries, cities)
+WHERE cities.country_id = countries.id AND cities.district = 'Buenos Aires' AND cities.population > 500000;
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+8.
+SELECT region AS Region, COUNT(countries.name) AS CountryRegionSUM FROM (countries)
+GROUP BY countries.region ORDER BY CountryRegionSUM DESC;
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

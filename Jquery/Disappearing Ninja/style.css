@@ -1,0 +1,10 @@
+img{
+    width:200px;
+    height:200px;
+} 
+
+input[type=button]{
+    display: block;
+    background-color: blueviolet;
+    font-size: large;
+}

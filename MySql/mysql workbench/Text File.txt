@@ -1,0 +1,13 @@
+ 
+USE twitter;
+SHOW Tables;
+
+SELECT tweet FROM tweets;
+
+INSERT INTO tweets (tweet, user_id, created_at, updated_at)
+VALUES ('hello world', 1, NOW(), NOW());
+
+UPDATE tweets SET tweet = 'hello again' WHERE id = 1;
+
+DELETE FROM tweets WHERE id = 14;
+SELECT tweet FROM tweets;
