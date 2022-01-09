@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width:970px;
+}
+.wrapper{
+    background-color: #265175;
+}
+
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+header img{
+    width:250px;
+}
+
+.rightHeader{
+    display:block;
+}
+.rightHeader p{
+    text-align: right;
+    font-size: small;
+    color: white;
+    margin: 0px 20px 5px 0px;
+}
+.rightHeader span{
+    color: black;
+    font-weight: bold;
+}
+.rightHeader a{
+    color: #d4b200;
+    text-decoration: none;
+}
+
+.searchBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height:50px;
+    border-radius: 10px;
+    background-color: #444444;
+    box-shadow: 1px 1px 2px 0px black;
+}
+.searchBox input[type=text]{
+    min-width: 50px;
+    height:30px;
+    margin-right:10px; 
+    border-style: inset;
+    border-color: white;
+    text-align: center;
+    color: grey;
+}
+.searchBox input[type=button]{
+    color: white;
+    background-color:#245076;
+    min-width: 40px;
+    height:30px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: #c0c0c0;
+    box-shadow: 1px 1px 3px .5px black;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-around;
+    height:50px;
+}
+.navigation ul{
+    margin:0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+    width:80%;
+    background-color: #467dab;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 0px black;
+}
+.navigation li{
+    list-style: none;
+}
+.navigation li a{
+    text-decoration: none;
+    color: white;
+}
+.content1{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+
+}
+.content1 .leftMenu{
+    width: 25%;
+}
+.content1 .leftMenu ul{
+    color: white;
+    text-align: center;
+    list-style: none;
+    line-height: 30px;
+}
+.content1 .leftMenu ul a{
+    color: white;
+}
+.content1 .leftMenu ul li:before{
+    content: "\00BB"; 
+    color: #fdd143;
+}
+.content1 .rightMenu{
+    width: 50%;
+    text-align: center;
+}
+.content1 .rightMenu p{
+    font-size: xx-small;
+    color: white;
+}
+
+.content1 .rightMenu ul{
+    text-align: center;
+    list-style: none;
+    color: #fdd143;
+    line-height: 30px;
+}
+
+.content2{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 20px 20px 20px;
+    font-size: small;
+    text-align: center;
+    background-color: white;
+    box-shadow: -2px -2px 0px 1px #1a3852;
+}
+hr{
+    height: 5px;
+    background-color: #75a8d3;
+    border: none;
+}
+.content2 .gettingStarted{
+    width:45%;
+}
+.content2 .gettingStarted .content{
+    padding-right: 80px;
+}
+.content2 .gettingStarted h4{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    
+}
+.content2 .gettingStarted p{
+    padding: 5px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+.content2 .gettingStarted ul{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    list-style: square;
+    /* color: #7bacd5; */
+}
+.content2 .gettingStarted ul span{
+    color: #7bacd5;
+}
+.content2 .Applications{
+    width:45%;
+}
+.content2 .Applications .content{
+    padding-right: 80px;
+}
+.content2 .Applications h4{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+.content2 .Applications p{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding: 5px;
+}
+.content2 .Applications span{
+    color: #75a8d3;
+}
+.content2 .Applications ul{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    list-style: square;
+}
+.content2 .gettingStarted ul span{
+    color: #7bacd5;
+}
+
+footer{
+    display: block;
+    background: rgb(53,113,167);
+    background: linear-gradient(0deg, rgba(53,113,167,1) 0%, rgba(38,81,117,1) 100%);
+    padding: 10px;
+}
+
+footer ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    color: #89bae3;
+    padding-top: 20px;
+}
+footer p{
+    margin-block-end: 0em;
+    color: #89bae3;
+    font-size: x-small;
+    text-align: center;
+}
