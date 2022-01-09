@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script>
+      $(document).ready(function(){
+        $("input[value=button]").click(function(){
+          alert('Hakuna Matata');
+        })
+        $("input[value=hide]").click(function(){
+          $(".hide").hide();
+        })
+        $("input[value=show]").click(function(){
+          $(".hide").show();
+        })
+        $("input[value=toggle]").click(function(){
+          $(".toggle").toggle();
+        })
+        $("input[value=slidedown]").click(function(){
+          $(".slide").slideDown();
+        })
+        $("input[value=slideup]").click(function(){
+          $(".slide").slideUp();
+        })
+        $("input[value=slidetoggle]").click(function(){
+          $(".slidetoggle").slideToggle();
+        })
+        $("input[value=fadeIn]").click(function(){
+          $(".fadeInandOut").fadeIn();
+        })
+        $("input[value=fadeOut]").click(function(){
+          $(".fadeInandOut").fadeOut();
+        })
+        $("input[value=addClass]").click(function(){
+          $(".addClass").addClass('color');
+        })
+        $("input[value=before]").click(function(){
+          $(".beforeafter").before('<p>this is before the paragraph</p>');
+        })
+        $("input[value=after]").click(function(){
+          $(".beforeafter").after('<p>this is before the paragraph</p>');
+        })
+        $("input[value=append]").click(function(){
+          $(".append").append('<p>this is appending the paragraph</p>');
+        })
+        $("input[value=html]").click(function(){
+          $(".html").html('<p>this is appending the paragraph</p>');
+        })
+        $("input[value=attribute]").click(function(){
+          $(".attribute").attr("title", "Hakuna matata");
+        })
+        $("input[value=val]").click(function(){
+          $("#val").val('Hakuna matata');
+        })
+        $("input[value=text]").click(function(){
+          $(".text").text('Hakuna matata');
+        })
+    });
+
+
+  </script>
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h1>AddClass</h1>
+    <input type="button" value="Click">
+    <p>Click the button to add class 'red' to this paragraph</p>
+    <hr>
+    <h1>Hide</h1>
+    <input type="button" value="hide">
+    <p class="hide">Click the button to Hide this paragraph</p>
+    <hr>
+    <h1>Show</h1>
+    <input type="button" value="show">
+    <p class="show">Click the button to Show the previouse paragraph</p>
+    <hr>
+    <h1>Toggle</h1>
+    <input type="button" value="toggle">
+    <p class="toggle">Click the button to Toggle this paragraph</p>
+    <hr>
+    <h1>slideDown and slideUp</h1>
+    <input type="button" value="slidedown">
+    <input type="button" value="slideup">
+    <p class="slide">Click the button to slide down or up this paragraph</p>
+    <hr>
+    <h1>slideToggle</h1>
+    <input type="button" value="slidetoggle">
+    <p class="slidetoggle">Click the button to Toggle slide this paragraph</p>
+    <hr>
+    <h1>fadeIn and fadeOut</h1>
+    <input type="button" value="fadeIn">
+    <input type="button" value="fadeOut">
+    <p class="fadeInandOut">Click the button to fade in or out for this paragraph</p>
+    <hr>
+    <h1>Add Class</h1>
+    <input type="button" value="addClass">
+    <p class="addClass">Click the button to add a new class to this paragraph</p>
+    <hr>
+    <h1>Before and After</h1>
+    <input type="button" value="before">
+    <input type="button" value="after">
+    <p class="beforeafter">Click one of the buttons to add before and/or after this paragraph</p>
+    <hr>
+    <h1>Append</h1>
+    <input type="button" value="append">
+    <p class="append">Click the button to append this paragraph</p>
+    <hr>
+    <h1>Html</h1>
+    <input type="button" value="html">
+    <p class="html">Click the button to change Html element for this paragraph</p>
+    <hr>
+    <h1>Attribute</h1>
+    <input type="button" value="attribute">
+    <p class="attribute">Click the button to add attribute to this paragraph</p>
+    <hr>
+    <h1>Value</h1>
+    <input type="button" value="val">
+    <input type="text" name="value" id="val" value="">
+    <p class="val">Click the button to change the value of the text box</p>
+    <hr>
+    <h1>Text</h1>
+    <input type="button" value="text">
+    <p class="text">Click the button to Change text in this paragraph</p>
+    <hr>
+  </div>
+
+</body>
+</html>
